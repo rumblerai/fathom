@@ -28,6 +28,9 @@ dev = [
 files = ["src", "tests"]
 python_version = "3.14"
 
+[tool.ruff.lint]
+extend-select = ["I"]
+
 [tool.coverage.run]
 branch = true
 parallel = true
