@@ -1,0 +1,11 @@
+# Changes here will be overwritten by Copier
+_commit: 54c1513
+_src_path: /Users/ai24/repos/rumblerai/copier-uv
+author_email: rumblerdev+ai@gmail.com
+author_fullname: rumblerai
+author_username: rumblerai
+project_description: Get meeting transcripts from Fathom
+project_title_answer: Fathom CLI
+repository_name: fathom
+repository_namespace: rumblerai
+repository_provider: github.com

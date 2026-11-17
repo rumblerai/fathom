@@ -1,0 +1,62 @@
+[project]
+name = "fathom"
+version = "0.1.0"
+description = "Get meeting transcripts from Fathom"
+readme = "README.md"
+authors = [{ name = "rumblerai", email = "rumblerdev+ai@gmail.com"}]
+requires-python = ">=3.14"
+dependencies = []
+
+[project.scripts]
+fathom = "fathom:main"
+
+
+[build-system]
+requires = ["uv_build>=0.12.9,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.2",
+    "pytest-cov>=5.0",
+    "ruff>=0.4",
+    "ty>=0.0.14",
+]
+
+[tool.coverage.run]
+branch = true
+parallel = true
+source = [
+    "src/",
+    "tests/"
+]
+
+[tool.coverage.paths]
+equivalent = [
+    "src/",
+    ".venv/lib/*/site-packages/",
+    ".venvs/*/lib/*/site-packages/"
+]
+
+[tool.coverage.report]
+precision = 2
+fail_under = 100
+skip_covered = true
+# Show missing line numbers in the terminal report
+show_missing = true
+omit = [
+    "src/*/__init__.py",
+    "src/*/__main__.py",
+    "tests/__init__.py"
+]
+# Lines/patterns to exclude from coverage accounting
+exclude_lines = [
+    "pragma: no cover",
+    "if TYPE_CHECKING"
+]
+
+[tool.coverage.html]
+skip_covered = false
+
+[tool.coverage.json]
+output = "htmlcov/coverage.json"
