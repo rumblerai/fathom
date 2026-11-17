@@ -17,11 +17,16 @@ build-backend = "uv_build"
 
 [dependency-groups]
 dev = [
+    "mypy>=1.18",
     "pytest>=8.2",
     "pytest-cov>=5.0",
     "ruff>=0.4",
     "ty>=0.0.14",
 ]
+
+[tool.mypy]
+files = ["src", "tests"]
+python_version = "3.14"
 
 [tool.coverage.run]
 branch = true
