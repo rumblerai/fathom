@@ -75,7 +75,7 @@ test-all:
 
 # Run the installed console-script entry point.
 run *args:
-    uv run --locked my-cli {{args}}
+    uv run --locked fathom {{args}}
 
 
 # ---------------------------------------------------------------------------
