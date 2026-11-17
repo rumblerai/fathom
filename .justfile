@@ -79,6 +79,13 @@ run *args:
 # Gates
 # ---------------------------------------------------------------------------
 
+# Apply automatic fixes and formatting, then lint, type-check with ty, and test.
+fix:
+    just format
+    just lint
+    just type
+    just test
+
 # Main local quality gate.
 #
 # ty is deliberately absent: mypy is authoritative.
