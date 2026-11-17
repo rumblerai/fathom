@@ -29,7 +29,7 @@ format:
     uv run --locked ruff check --fix .
     uv run --locked ruff format .
 
-# Non-mutating formatting check used by CI.
+# Non-mutating formatting check.
 format-check:
     uv run --locked ruff format --check .
 
@@ -46,7 +46,7 @@ lint:
 type:
     uv run --locked ty check
 
-# Authoritative type checker used by CI.
+# Authoritative type checker.
 mypy:
     uv run --locked mypy
 
@@ -85,7 +85,7 @@ run *args:
 # Gates
 # ---------------------------------------------------------------------------
 
-# Exactly the checks required by the main CI quality gate.
+# Main local quality gate.
 #
 # ty is deliberately absent: mypy is authoritative.
 check: format-check lint mypy test
