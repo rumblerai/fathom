@@ -56,12 +56,14 @@ mypy:
 # ---------------------------------------------------------------------------
 
 # Normal development test run using the project's default Python (3.14).
+[positional-arguments]
 test *args:
-    uv run --locked pytest {{args}}
+    uv run --locked pytest "$@"
 
 # Test one Python version in a temporary environment without changing .venv.
+[positional-arguments]
 test-python version *args:
-    uv run --isolated --locked --python {{version}} pytest {{args}}
+    version="$1"; shift; uv run --isolated --locked --python "$version" pytest "$@"
 
 # Local compatibility sweep.
 test-all:
@@ -74,8 +76,9 @@ test-all:
 # ---------------------------------------------------------------------------
 
 # Run the installed console-script entry point.
+[positional-arguments]
 run *args:
-    uv run --locked fathom {{args}}
+    uv run --locked fathom "$@"
 
 
 # ---------------------------------------------------------------------------
